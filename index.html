@@ -8,9 +8,33 @@
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
-      :root {
-        --primary-color: #1259a1;
-      }
+        :root {
+            --primary-color: #1259a1;
+        }.modal {
+            display: none;}
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);}
+        .modal-container {
+            position: relative;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 90%;
+            max-width: 60rem;
+        }:target .modal-overlay {
+            display: flex;
+        }
+        :target .modal {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white" style='font-family: Manrope, "Noto Sans", sans-serif;'>
@@ -47,7 +71,7 @@
 </div>
 </div>
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<a class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]" href="#sensor-modal">
 <div class="flex items-center gap-4">
 <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
 <img alt="Temperature Sensor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_LnR0UdMWZPQJRowB45Qe3jIk-1lWxp9gkPU1NT9oS2WWw7pIoO6Hen-3KMy_czhige124dSRAi_K2_l8S0v6WUaz-Xs0LnHBqHRDWCjn23xN6P2RE7h7kHYm-RECQnnelh3z1ITzVGqDt1ulSuGPP_64Stvd4kRr53qolqcY8SvJrDBp2b9KPnbmi_7RLTyXofFABe-ROTrSYXSWHpW4nBXLR0ABp323IKOWB1b0ANuWqpnD-pnIBVqmGHlG_dfp6jcNKO0NpDo"/>
@@ -58,7 +82,7 @@
 <p class="mt-1 text-2xl font-semibold">22°C</p>
 </div>
 </div>
-</div>
+</a>
 <div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
 <div class="flex items-center gap-4">
 <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
@@ -122,6 +146,62 @@
 </div>
 </div>
 </main>
+</div>
+<div class="modal" id="sensor-modal">
+<a class="modal-overlay" href="#">
+</a><div class="modal-container"><a class="modal-overlay" href="#">
+</a><div class="rounded-lg bg-gray-800 shadow-xl" onclick="event.stopImmediatePropagation()"><a class="modal-overlay" href="#">
+</a><div class="flex items-start justify-between border-b border-gray-700 p-6"><a class="modal-overlay" href="#">
+<div>
+<h3 class="text-2xl font-bold">Temperature Sensor</h3>
+<p class="text-gray-400">Living Room</p>
+</div>
+</a><a class="text-gray-400 hover:text-white" href="#">
+<span class="material-symbols-outlined">close</span>
+</a>
+</div>
+<div class="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
+<div>
+<h4 class="mb-4 text-lg font-semibold">Real-time Data</h4>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-[var(--primary-color)]">device_thermostat</span>
+<p class="text-5xl font-bold">22<span class="text-3xl">°C</span></p>
+</div>
+<div class="mt-6">
+<h5 class="mb-2 text-sm font-medium text-gray-400">Status</h5>
+<div class="flex items-center gap-2">
+<span class="h-3 w-3 rounded-full bg-green-500"></span>
+<p class="text-green-400">Online</p>
+</div>
+</div>
+<div class="mt-4">
+<h5 class="mb-2 text-sm font-medium text-gray-400">Connection</h5>
+<p class="text-gray-300">WiFi, Strong Signal</p>
+</div>
+</div>
+<div>
+<h4 class="mb-4 text-lg font-semibold">Historical Data (Last 24h)</h4>
+<div class="h-48 rounded-lg bg-gray-900 p-2">
+<img alt="Historical data chart" class="h-full w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK7QF9iDpREU3DTP943Qm1jskvvdB4F28JZgrkV-vvEELSCSeXqEP06z7B4XFZcBHMltAjuDj_mnKQl8XH2gBuXMIZcM9ZJQktcFN2VZkYg7gxZJvN7GtdkYOxAScd7LJYBeAiUxGveNEtFIW0YZECy_BDed3kfKEplncQ0bsZQDMnyrOV73xSS20dIaL77V34tULh_RWjgv8O8Gcl-pSzMe7uYO95gEOy9vsKPnIyTz5mhyNl1ZvAP7HI7BDHNmQLDyf7sehloh8"/>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 p-6">
+<h4 class="mb-4 text-lg font-semibold">Settings</h4>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Calibrate</span>
+</button>
+<button class="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<span class="material-symbols-outlined text-base">settings</span>
+<span>Adjust Settings</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 
 </body></html>
