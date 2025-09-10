@@ -10,8 +10,10 @@
 <style type="text/tailwindcss">
         :root {
             --primary-color: #1259a1;
-        }.modal {
-            display: none;}
+        }
+        .modal {
+            display: none;
+        }
         .modal-overlay {
             display: none;
             position: fixed;
@@ -21,15 +23,17 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);}
+            background-color: rgba(0, 0, 0, 0.5);
+        }
         .modal-container {
             position: relative;
             margin: auto;
             top: 50%;
             transform: translateY(-50%);
             width: 90%;
-            max-width: 60rem;
-        }:target .modal-overlay {
+            max-width: 80rem;
+        }
+        :target .modal-overlay {
             display: flex;
         }
         :target .modal {
@@ -149,51 +153,81 @@
 </div>
 <div class="modal" id="sensor-modal">
 <a class="modal-overlay" href="#">
-</a><div class="modal-container"><a class="modal-overlay" href="#">
-</a><div class="rounded-lg bg-gray-800 shadow-xl" onclick="event.stopImmediatePropagation()"><a class="modal-overlay" href="#">
-</a><div class="flex items-start justify-between border-b border-gray-700 p-6"><a class="modal-overlay" href="#">
+</a>
+<div class="modal-container">
+<div class="h-[90vh] max-h-[1000px] overflow-y-auto rounded-lg bg-gray-800 shadow-xl" onclick="event.stopImmediatePropagation()">
+<div class="sticky top-0 z-10 flex items-start justify-between border-b border-gray-700 bg-gray-800 p-6">
 <div>
 <h3 class="text-2xl font-bold">Temperature Sensor</h3>
 <p class="text-gray-400">Living Room</p>
 </div>
-</a><a class="text-gray-400 hover:text-white" href="#">
+<a class="text-gray-400 hover:text-white" href="#">
 <span class="material-symbols-outlined">close</span>
 </a>
 </div>
-<div class="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
-<div>
+<div class="grid grid-cols-1 gap-8 p-6 lg:grid-cols-3">
+<div class="lg:col-span-2">
 <h4 class="mb-4 text-lg font-semibold">Real-time Data</h4>
+<div class="rounded-lg bg-gray-900 p-6">
+<div class="flex items-center justify-between">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-4xl text-[var(--primary-color)]">device_thermostat</span>
-<p class="text-5xl font-bold">22<span class="text-3xl">°C</span></p>
+<span class="material-symbols-outlined text-5xl text-[var(--primary-color)]">device_thermostat</span>
+<p class="text-6xl font-bold">22<span class="text-4xl">°C</span></p>
 </div>
-<div class="mt-6">
-<h5 class="mb-2 text-sm font-medium text-gray-400">Status</h5>
+<div class="text-right">
+<h5 class="text-sm font-medium text-gray-400">Status</h5>
 <div class="flex items-center gap-2">
 <span class="h-3 w-3 rounded-full bg-green-500"></span>
 <p class="text-green-400">Online</p>
 </div>
 </div>
-<div class="mt-4">
-<h5 class="mb-2 text-sm font-medium text-gray-400">Connection</h5>
-<p class="text-gray-300">WiFi, Strong Signal</p>
 </div>
-</div>
-<div>
-<h4 class="mb-4 text-lg font-semibold">Historical Data (Last 24h)</h4>
-<div class="h-48 rounded-lg bg-gray-900 p-2">
+<div class="mt-6">
+<h4 class="mb-2 text-lg font-semibold">Temperature History (Last 24h)</h4>
+<div class="h-64 rounded-lg bg-gray-800 p-2">
 <img alt="Historical data chart" class="h-full w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK7QF9iDpREU3DTP943Qm1jskvvdB4F28JZgrkV-vvEELSCSeXqEP06z7B4XFZcBHMltAjuDj_mnKQl8XH2gBuXMIZcM9ZJQktcFN2VZkYg7gxZJvN7GtdkYOxAScd7LJYBeAiUxGveNEtFIW0YZECy_BDed3kfKEplncQ0bsZQDMnyrOV73xSS20dIaL77V34tULh_RWjgv8O8Gcl-pSzMe7uYO95gEOy9vsKPnIyTz5mhyNl1ZvAP7HI7BDHNmQLDyf7sehloh8"/>
 </div>
 </div>
 </div>
-<div class="border-t border-gray-700 p-6">
-<h4 class="mb-4 text-lg font-semibold">Settings</h4>
-<div class="flex flex-wrap gap-4">
-<button class="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="mb-4 text-lg font-semibold">Sensor Metadata</h4>
+<div class="space-y-3 rounded-lg bg-gray-900 p-4">
+<div class="flex justify-between">
+<span class="font-medium text-gray-400">Sensor ID:</span>
+<span class="text-gray-300">TEMP-LR-001</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-400">Model:</span>
+<span class="text-gray-300">ThermoPro v3</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-400">Connection:</span>
+<span class="text-gray-300">WiFi, Strong</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-400">Last Ping:</span>
+<span class="text-gray-300">30s ago</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-400">Firmware:</span>
+<span class="text-gray-300">v1.2.5</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="mb-4 text-lg font-semibold">Controls</h4>
+<div class="space-y-3 rounded-lg bg-gray-900 p-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<span class="material-symbols-outlined text-base">refresh</span>
+<span>Refresh Data</span>
+</button>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
 <span class="material-symbols-outlined text-base">tune</span>
 <span>Calibrate</span>
 </button>
-<button class="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
 <span class="material-symbols-outlined text-base">settings</span>
 <span>Adjust Settings</span>
 </button>
@@ -201,7 +235,46 @@
 </div>
 </div>
 </div>
-
+<div class="border-t border-gray-700 p-6">
+<h4 class="mb-4 text-lg font-semibold">Historical Logs &amp; Export</h4>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="max-h-64 overflow-y-auto rounded-lg bg-gray-900 p-4">
+<h5 class="mb-2 font-semibold">Event Log</h5>
+<ul class="space-y-2 text-sm">
+<li class="flex justify-between text-gray-400"><span>[14:01] Temp: 22.1°C</span><span>OK</span></li>
+<li class="flex justify-between text-gray-400"><span>[14:00] Temp: 22.0°C</span><span>OK</span></li>
+<li class="flex justify-between text-orange-400"><span>[13:55] Ping delayed</span><span>Warning</span></li>
+<li class="flex justify-between text-gray-400"><span>[13:50] Temp: 21.9°C</span><span>OK</span></li>
+<li class="flex justify-between text-red-500"><span>[13:45] Sensor offline</span><span>Error</span></li>
+<li class="flex justify-between text-gray-400"><span>[13:40] Temp: 22.2°C</span><span>OK</span></li>
+</ul>
+</div>
+<div>
+<h5 class="mb-4 font-semibold">Export Sensor Data</h5>
+<div class="flex flex-col gap-4">
+<div class="flex-1">
+<label class="mb-2 block text-sm font-medium text-gray-400" for="date-range-modal">Date Range</label>
+<div class="flex gap-2">
+<input class="w-full rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)]" id="date-range-modal" type="date"/>
+<input class="w-full rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)]" type="date"/>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<span class="material-symbols-outlined text-base">download</span>
+<span>CSV</span>
+</button>
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-600">
+<span class="material-symbols-outlined text-base">download</span>
+<span>JSON</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 </body></html>
