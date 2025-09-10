@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #1259a1;
+      }
+    </style>
+</head>
+<body class="bg-gray-900 text-white" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="flex min-h-screen flex-col">
+<header class="flex items-center justify-between border-b border-gray-700 px-10 py-4">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-xl font-bold">Sensor Hub</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-gray-300 hover:text-white" href="#">Dashboard</a>
+<a class="rounded-lg bg-gray-700 px-3 py-2 text-sm font-medium text-white" href="#">Sensors</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white">
+<span class="material-symbols-outlined"> notifications </span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD3Ei2CTOc2-HiELw1My--ViYXR9T1CmAg1Ak54ou9HVdS1cJ5IZUt02GbthD7vGlnINvIUyH89EwFQ9BTXfsxuBzn6ri9sNq67RWlbW-IbPhfGZhkYJMEdPp2pZG2MXxVEh1qmtu6qQJpDJleMOyzEaD0D6d-W_mRC931TQhvSMyrekGeI2mnGgN1xqFhXMvWejwx78719yu3a3gFjS92yh475wYOUkdgCsjBx-Owhfll3hyydcB0x15BJEZvJXlZUV_DKYxzo_c");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 py-8 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8">
+<h2 class="text-3xl font-bold tracking-tight">Sensor Dashboard</h2>
+<p class="mt-2 text-gray-400">Monitor and manage your connected sensors in real-time.</p>
+</div>
+<div class="mb-8">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"> search </span>
+<input class="w-full rounded-lg border border-gray-700 bg-gray-800 py-2 pl-10 pr-4 text-white placeholder-gray-400 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)]" placeholder="Search sensors..." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Temperature Sensor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_LnR0UdMWZPQJRowB45Qe3jIk-1lWxp9gkPU1NT9oS2WWw7pIoO6Hen-3KMy_czhige124dSRAi_K2_l8S0v6WUaz-Xs0LnHBqHRDWCjn23xN6P2RE7h7kHYm-RECQnnelh3z1ITzVGqDt1ulSuGPP_64Stvd4kRr53qolqcY8SvJrDBp2b9KPnbmi_7RLTyXofFABe-ROTrSYXSWHpW4nBXLR0ABp323IKOWB1b0ANuWqpnD-pnIBVqmGHlG_dfp6jcNKO0NpDo"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Temperature</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Living Room</p>
+<p class="mt-1 text-2xl font-semibold">22°C</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Humidity Sensor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRbZmDba5WLD6oNozs5UeByg0mZdftPZlPv307qJwpGGcmE-B1dq9u_U_OPO4GUVRfJ4y3deIjxQ0fhXbcO89qovbLDBgbuT98y6efEP4b-h0_RpiYHkg2BgSALlMRsdCQo5khjlfqiX5_B22mS_Zm3CowRS7JjMz2tQVKCm7xBqhjIit7TTEE5XyhqmOFQLXYiqbQuEqBsmEDP97T7E3xZfOTp_XUp_TATsg8OoGra5pD7AUk5aeMKpdPg0vWa35RWONV-BTRY7o"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Humidity</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Basement</p>
+<p class="mt-1 text-2xl font-semibold">55%</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Motion Detector" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJhn-4KphGu2BJJTreNgg5hg6WakAze89YuLf7hG5Z_4yzfp28on6BTu9ms4vrgg_3N4guIjetdvXXMZa9cPCzwzktEdm26fHGaMKlcuIEKraerUakDsHs66dCrj5yokIU1OmcagP24YIc3_66n8r41nnxMEbeXbVOJ2P5gdOg6Uysi31cQTNBf4UOqwJMMzx0IPhHyGuDikjNtUViGcIdAM-4QgvohyjXn_VtePoDgmn739AbMSCFcZGFfJGmaw6fyTbmbtKC8es"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Motion</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Front Door</p>
+<p class="mt-1 text-sm font-semibold text-green-400">No Motion Detected</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Air Quality Monitor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn8i6INeX442AKvoRDNJGZtJYo9LLOdSFUbQlHIu9FV4SUpU7UwxaQxUS54Fw-YrVKAGQlJFlqDSbOp3A6Y6aGpNLsLNJ5XeYWkivVGkRUHSuXwwb8ugjkRr1rdgt3-7t8r6azYpp4mQTRyqUJWdZmalyhI3W_SHLeJqLJiQJbJIfhMf3wiAJoKeakc1HENx45zovrSFAYbPT3z_Uyw1QEvbs9RdO3vtYkk6JkJnCC41eh1mRfqJttcCx9ab8FtgY_9Y8CrLEZU4g"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Air Quality</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Office</p>
+<p class="mt-1 text-2xl font-semibold">Good</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Light Sensor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhovXm_z51n4wdHCG7nkNEl-nzmn8Lg628mgYabCTofQXEZnaIFTQy2NXW5ZX-oFzQ8fvVVq920J_7xUvJsWT5pc-272FsW5GB_fDrDOh7p_SFwQcpPo3mv8iRpkVxA2mVI5JmvlpGUHlLRknmBvKv8iunNz2OEunbGXpHkZSO2FlBMAE6k0svg-ETPVxdSc1qLfRW0ywx03JpLC_sliOXkGJM-aFbBbrO7kcZ7kWRBLGw1_vQ4ZKymkwOfrMfnBKdQSaXXnKbB-o"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Light</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Backyard</p>
+<p class="mt-1 text-2xl font-semibold">800 lux</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-lg bg-gray-800 p-4 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-color)]">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Sound Level Meter" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD32JzC26uztXauGf84azVyT1yE2V8o7Ha8n-r1oOVBRdsOKOHb12W1llXR2lphc0T5vrM4pidShysuB7DVn4Y-1Z1RgyqTDwYZHWKGYHOe9k1aZGCkkE4T6N16ToxD1p-GvrBQXeCNorBfpgtVkfnrfQHo7wq6dmBWlnRE1oSdIJwIctFHEZlwX0H32GY3s_eSDX5aCTBgXYHq16dnrZ8UbbW_MV68rgwdreMpiGwGXs8MCPjV2lAHycN4F36ToMHpWoiVDbPkK5I"/>
+</div>
+<div>
+<h3 class="text-lg font-bold">Sound</h3>
+<p class="text-sm text-gray-400 group-hover:text-white">Garage</p>
+<p class="mt-1 text-2xl font-semibold">45 dB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
